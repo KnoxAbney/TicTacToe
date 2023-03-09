@@ -123,7 +123,7 @@ void WinScreen(int turn){
   ScoreDisplay();
   CurrentBoard();
   
-  // Display a message for each of the end conditions.
+  // Display a message for each of the end conditions and prompt user input of whether they would like to start another game.
   if (winner == 1 || 2){
     std::cout << "Player "<< winner << " wins! Would you like to play another game? \n";
     std::cout << "1) y?\n" << "2) n?\n";
@@ -139,7 +139,7 @@ void WinScreen(int turn){
       std::cout << "1) y?\n" << "2) n?\n";
   }
   
-  // Prompt user input by asking if they would like to continue.
+  // responds based on user input to continue with next game or not.
   std::cin >> cont;
   if (cont == '1' || 'y'){
       turn = 0;
