@@ -4,14 +4,22 @@
 
 int main (){
 
-  for(int turn = 1; turn<=9; turn++){
+  bool end = false;
+  int turn = 1;
 
+  while(end == false){
+    
     if(turn == 1){
+
     setup(turn);
+
     }
 
     NextTurn(turn);
     turn = WinScreen(turn);
+    end = EndCheck();
+    turn++;
+
 
   }
 
