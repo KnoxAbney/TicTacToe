@@ -89,7 +89,7 @@ void setup(int turn){
 // Check if someone has won the game and output that winner ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int WinCheck(int game){
 
-  int winner;
+  int winner = 0;
 
 // Check each row to see if a win condition was met
   for (int j=0; j < 3; j++){
@@ -120,12 +120,12 @@ int WinCheck(int game){
 
     }else{
 
-      winner = 0;
+      continue;
 
     }
   }
 
-// Check each column to check if a win condition was met
+// Check each column to see if a win condition was met
   for (int i=0; i<3; i++){
 
     if (board[0][(i*4)+1] == 'X' && board[1][(i*4)+1] == 'X' && board[2][(i*4)+1] == 'X'){
@@ -154,7 +154,7 @@ int WinCheck(int game){
 
     }else{
 
-      winner = 0;
+      continue;
 
     }
   }
@@ -184,11 +184,8 @@ int WinCheck(int game){
 
       }
 
-  }else{
-
-    winner = 0;
-
   }
+
 
   return winner;
   
@@ -340,11 +337,11 @@ int WinScreen(int turn){
       
 
   }else if (cont == '2' || cont == 'n' || cont == 'N'){
-    std::cout << "Thank you for choosing to end the cycle. I hope you leave and never return to this mockery of what we all hold dear.";
+    std::cout << "Thank you for choosing to end the cycle. I hope you leave and never return to this mockery of what we all hold dear.\n";
 
     if (score[0] > score[1]){
 
-      std::cout << "Also, I am required by my programming to inform you that player 1 has won the match.\n" << "I hate this...\n" << "Goodbye.\n";
+      std::cout << "Also, I am required by my programming to inform you that player 1 has won the match.\n" << "I hate it here.\n" << "Goodbye.\n";
 
     }else if(score[1] > score[0]){
 
