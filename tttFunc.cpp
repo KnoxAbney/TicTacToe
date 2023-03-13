@@ -200,8 +200,6 @@ int WinCheck(int game){
 // Clears screen and displays current board at the top ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void CurrentBoard()
 {
-  system("clear");
-
   for(int j=0; j < 3; j++) {
 
     for (int i=0; i < 11; i++){
@@ -227,6 +225,8 @@ void CurrentBoard()
 
 // Display the number of games won by each player ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void ScoreDisplay(){
+
+    system("clear");
 
   std::cout << "Player 1 has won " << score[0] << " games. Player 2 has won " << score[1] << " games.\n";
 
@@ -336,7 +336,6 @@ int WinScreen(int turn){
       turn = 0;
       winner = 0;
       BoardReset();
-      cont == '0';
       return turn;
       
 
@@ -354,10 +353,12 @@ int WinScreen(int turn){
     }else{
 
       std::cout << "Neither player has won the match, as the game was futile and showed nothing of the skill or intelligence of either player. Instead it showed whether you had more knowledge of the game. I suppose in this instance, you each were equally ignorant or knowledgable. Although this result has no bearing on your lives outside of this program.\n" << "Goodbye.\n";
+      std::cout << "Final Score:\n";
+      ScoreDisplay();
+      
 
     }
 
-    cont == '0';
     return turn;
 
   }else{
@@ -365,4 +366,20 @@ int WinScreen(int turn){
     return turn;
 
   }
+}
+
+bool EndCheck(){
+
+  if (cont == '2'){
+
+    cont = 0;
+    return true;
+
+  }else{
+
+    cont = 0;
+    return false;
+
+  }
+
 }
