@@ -11,6 +11,7 @@ int main (){
     }
 
     NextTurn(turn);
+    turn = WinScreen(turn);
 
   }
 
